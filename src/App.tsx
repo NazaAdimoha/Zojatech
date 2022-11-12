@@ -1,10 +1,13 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import AuthLeft from './components/AuthLeft';
+
 
 function App() {
   return (
-    <div className="App">
-      <p className='text-6xl text-indigo-900'>Hello world</p>
-    </div>
+    <Routes>
+      <Route path="/authleft" element={<AuthLeft />} />
+    </Routes>
   );
 }
 

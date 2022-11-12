@@ -1,0 +1,1 @@
+export const BaseUrl = "https://fe-test.revvex.io/api/admin";
