@@ -9,9 +9,10 @@ const AuthLeft = () => {
                 <img className='' src={Logo} alt="logo" />
                 <div className='mt-24'>
                     {
-                        AuthTextData.map((item) => {
+                        AuthTextData.map((item, index) => {
                             return (
-                                <div className='flex flex-row mb-8 justify-start align-top items-center'>
+                                
+                                <div key={index} className='flex flex-row mb-8 justify-start align-top items-center'>
                                     <div className='mr-5'>
                                         {item.icon}
                                     </div>

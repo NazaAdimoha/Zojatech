@@ -3,30 +3,47 @@ import React from 'react';
 
 interface ButtonProps {
     label: string;
-    type: 'button' | 'submit' | 'reset';
+    type: any;
+    size: any;
     onClick: () => void;
 }
 
-const Button = ({ label, type, onClick}: ButtonProps) => {
+const Button = ({ label, type, size, onClick}: ButtonProps) => {
     const getButtonColor = (buttonType: any) => {
-        let colorBase = ""
+        let colorBase = "";
         switch (buttonType) {
             case "primary": 
-                colorBase = "{props.theme.colors.primary} hover:bg-blue-400"
+                colorBase = "bg-[#FF8600] hover:bg-blue-400"
             break;
             case "secondary":
-                colorBase = "{props.theme.colors.secondary} hover:bg-blue-400"
+                colorBase = "bg-[#FFB800] hover:bg-blue-400"
             break;
             default:
-                colorBase = "{props.theme.colors.dark-bg}"    
+                colorBase = "bg-[#FF8600] hover:bg-blue-400"    
         }
         return colorBase
     };
     const buttonColor = getButtonColor(type);
 
+    const getButtonSize = (buttonSize: any) => {
+        let sizes = "";
+        switch (buttonSize) {
+            case "small": 
+                sizes = "px-2 py-2 w-[160px] rounded-lg text-sm"
+            break;
+            case "large":
+                sizes = "px-5 py-2.5"
+            break;
+            default:
+                sizes = "p-[8px 16px 8px 16px]"    
+        }
+        return sizes
+    };
+    const buttonSize = getButtonSize(size);
+
     return (
         <button 
-            className={`bg-${buttonColor} text-white font-bold py-2 px-4 lg:px-5 lg:py-2.5 mr-2 rounded-sm focus:outline-none focus:shadow-outline`}
+            className={`${buttonColor} text-white font-bold ${buttonSize} mr-2 rounded-sm focus:outline-none focus:shadow-outline`}
             type={type}
             onClick={onClick}
         >

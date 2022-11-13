@@ -9,10 +9,10 @@ type SignupLayoutProps = {
 const SignupLayout = ({children}: SignupLayoutProps) => {
     return (
         <div className='flex flex-row w-full h-screen '>
-            <div className='w-1/2 border border-[1px solid #fff]'>
+            <div className='w-1/2 h-screen border border-[1px solid #fff]'>
                 <AuthLeft />
             </div>
-            <div className='w-1/2 bg-[#F8FAFC] scroll-auto overflow-y-auto shadow-xl flex flex-col items-center pt-[10rem]'>
+            <div className='w-1/2  bg-[#F8FAFC] overflow-y-auto shadow-xl flex flex-col items-center pt-[10rem]'>
                 {children}
             </div>
         </div>
